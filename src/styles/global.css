@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@plugin '@tailwindcss/typography';
+
+:root {
+	--orange: rgb(242 177 48);
+	--blue: rgb(0, 33, 71);
+}
+
+#body a {
+}
+#body a:visited {
+	color: var(--blue);
+}
+#body a:hover {
+	color: var(--orange);
+}

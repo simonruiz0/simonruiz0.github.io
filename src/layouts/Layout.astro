@@ -1,15 +1,43 @@
+---
+import "../styles/global.css";
+import Prose from "../layouts/Prose.astro";
+
+const { frontmatter } = Astro.props;
+---
 <!doctype html>
-<html lang="en">
+<html 
+	lang="en"		
+>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" href="/smurf_hexagon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Simón | {frontmatter.title}</title>
 	</head>
+	<header class="px-10 py-2 font-bold">
+		<div class="flex gap-8">
+			<a class="shrink-0" href="">
+				<!--  -->
+				<img class="w-24 hover:scale-105" src="smurf_hexagon.png" alt="smurf">
+			</a>
+			<div class="gap-2">
+				<h1 class="text-3xl pt-5 pb-2">Simón Ruiz</h1>
+				<nav class="flex flex-row flex-wrap gap-x-6 text-xl">
+					<a href="/">About Me</a>
+					<a href="cv">CV</a>
+					<a href="random-stuff">Random stuff</a>
+					<a href="contact">Get in touch</a>
+				</nav>
+			</div>
+		</div>
+	</header>
 	<body>
-		<slot />
+		<div id="body" class="px-10 py-10">
+			<Prose>
+				<slot />
+			</Prose>
+		</div>
 	</body>
 </html>
 
@@ -18,6 +46,15 @@
 	body {
 		margin: 0;
 		width: 100%;
-		height: 100%;
+		height: auto;
+	}
+	header {
+		background: var(--orange);
+	}
+	nav > a {
+		text-wrap: nowrap;
+	}
+	nav > a:hover {
+		text-decoration: underline;
 	}
 </style>
