@@ -11,29 +11,28 @@ const { frontmatter } = Astro.props;
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href="/smurf_hexagon.ico" />
+		<link rel="icon" href="/simon_hexagon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Simón | {frontmatter.title}</title>
 	</head>
-	<header class="px-10 py-2 font-bold">
-		<div class="flex gap-8">
+	<header class="flex px-10 py-2 justify-center">
+		<div class="flex gap-8 w-150">
 			<a class="shrink-0" href="">
-				<!--  -->
-				<img class="w-24 hover:scale-105" src="smurf_hexagon.png" alt="smurf">
+				<img class="w-24 hover:scale-105" src="/simon_hexagon.png" alt="simon">
 			</a>
 			<div class="gap-2">
-				<h1 class="text-3xl pt-5 pb-2">Simón Ruiz</h1>
+				<h1 class="text-3xl font-bold pt-5 pb-2">Simón Ruiz</h1>
 				<nav class="flex flex-row flex-wrap gap-x-6 text-xl">
 					<a href="/">About Me</a>
-					<a href="cv">CV</a>
-					<a href="random-stuff">Random stuff</a>
-					<a href="contact">Get in touch</a>
+					<a href="/cv">CV</a>
+					<a href="/random-stuff">Random stuff</a>
+					<a href="/contact">Get in touch</a>
 				</nav>
 			</div>
 		</div>
 	</header>
 	<body>
-		<div id="body" class="px-10 py-10">
+		<div id="body" class="flex px-10 py-10 justify-center">
 			<Prose>
 				<slot />
 			</Prose>
@@ -53,8 +52,9 @@ const { frontmatter } = Astro.props;
 	}
 	nav > a {
 		text-wrap: nowrap;
+		text-decoration: underline;
 	}
 	nav > a:hover {
-		text-decoration: underline;
+		scale: 105% 105%;
 	}
 </style>

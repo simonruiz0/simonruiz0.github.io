@@ -2,12 +2,10 @@
 @plugin '@tailwindcss/typography';
 
 :root {
-	--orange: rgb(242 177 48);
-	--blue: rgb(0, 33, 71);
+	--orange: #E09012;
+	--blue: #103080;
 }
 
-#body a {
-}
 #body a:visited {
 	color: var(--blue);
 }
